@@ -1,14 +1,43 @@
+// console.log(1);
+
 /*
  * Цикл while
  */
+
+// debugger;
+// let counter = 10;
+// const max = 15;
+
+// while(counter < max){
+//     console.log(counter);
+// }
+
 
 /*
  * Цикл do while
  */
 
+// let select;
+// do{
+//     select = prompt('Select');
+// }while(select != 0)
+
+
 /*
  * Цикл for
  */
+
+debugger;
+const length = 6;
+for( let i = 0; i < length; i++){
+    if(i === 3) break;
+    console.log(`Збираю жуків на ${i+1} рядку`);
+    console.log(`Прориваю ${i+1} рядок`);
+    console.log(`Поливаю ${i+1} рядок`);
+    console.log('---------------------');
+}
+
+
 
 /*
  * Напиши скрипт который подсчитывает общую сумму зарплат работников.
@@ -28,5 +57,24 @@ let totalSalary = 0;
  * Например, если min=0 и max=5, то диапазон 0-5, и в нём два чётных числа - 2 и 4, их сумма 6.
  */
 
-let min = 0;
-let max = 10;
+// let min = 0;
+// let max = 10;
+// ==========================
+
+// counter += 5
+// counter = counter + 5
+
+// counter -= 5
+// counter = counter - 5
+
+// counter *= 5
+// counter = counter * 5
+
+// counter /= 5
+// counter = counter / 5
+
+////////////////////////
+// console.log(); // 11
+// console.log(counter); // 11
+
+// counter++;
