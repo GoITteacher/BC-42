@@ -8,7 +8,7 @@
 const playlist = {
     name: 'myPlaylist',
     rating: 8,
-    newRating: 10
+    newRating: 10,
 }
 
 
