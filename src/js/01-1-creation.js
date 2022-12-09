@@ -6,11 +6,11 @@
  */
 
 const playlist = {
-    '#123': 'myPlaylist',
-    rating: 8
+    name: 'myPlaylist',
+    rating: 8,
+    newRating: 10
 }
 
-console.log(playlist);
 
 
 /* 
