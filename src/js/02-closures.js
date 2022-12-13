@@ -1,4 +1,4 @@
-/*
+/* 
  * Функция результатом своей работы может возвращать другую функцию.
  *
  * Возвращаемая функция во время вызова будет иметь доступ
@@ -7,3 +7,25 @@
  * это называется «замыкание».
 / 
 */
+
+function foo(y) {
+  // function test(x) {
+  //   console.log(x + y);
+  // }
+  const test = x => {
+    console.log(x + y);
+  };
+  return test;
+}
+
+const test10 = foo(10);
+const test50 = foo(50);
+const test100 = foo(100);
+
+test10(10);
+test10(20);
+test10(30);
+
+test50(60);
+test50(70);
+test50(80);
