@@ -11,3 +11,9 @@
 */
 
 let array = [1, 3, 56, 1, 5, 78, 2, 6];
+
+// const filteredArray = array.filter(value => `${value}`.includes('6'));
+// const filteredArray = array.filter(
+//   (value, index, array) => value > array.length,
+// );
+// console.log(filteredArray);

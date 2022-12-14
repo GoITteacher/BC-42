@@ -6,6 +6,7 @@ const cars = [
     amount: 14,
     price: 24045,
     onSale: true,
+    owners: [1, 2, 3],
   },
   {
     make: 'Honda',
@@ -14,6 +15,7 @@ const cars = [
     amount: 2,
     price: 22455,
     onSale: true,
+    owners: [1, 2, 3],
   },
   {
     make: 'Mazda',
@@ -22,6 +24,7 @@ const cars = [
     amount: 8,
     price: 24195,
     onSale: false,
+    owners: [1, 2, 3],
   },
   {
     make: 'Mazda',
@@ -30,6 +33,7 @@ const cars = [
     amount: 7,
     price: 31520,
     onSale: true,
+    owners: [1, 2, 3],
   },
   {
     make: 'Toyota',
@@ -38,6 +42,7 @@ const cars = [
     amount: 19,
     price: 34210,
     onSale: false,
+    owners: [1, 2, 3],
   },
   {
     make: 'Toyota',
@@ -46,6 +51,7 @@ const cars = [
     amount: 16,
     price: 45560,
     onSale: false,
+    owners: [1, 2, 3],
   },
   {
     make: 'Toyota',
@@ -54,6 +60,7 @@ const cars = [
     amount: 4,
     price: 24320,
     onSale: true,
+    owners: [1, 2, 3],
   },
   {
     make: 'Ford',
@@ -62,6 +69,7 @@ const cars = [
     amount: 11,
     price: 27110,
     onSale: true,
+    owners: [1, 2, 3],
   },
   {
     make: 'Ford',
@@ -70,6 +78,7 @@ const cars = [
     amount: 13,
     price: 22120,
     onSale: true,
+    owners: [1, 2, 3],
   },
   {
     make: 'Ford',
@@ -78,6 +87,7 @@ const cars = [
     amount: 6,
     price: 31660,
     onSale: false,
+    owners: [1, 2, 3],
   },
 ];
 

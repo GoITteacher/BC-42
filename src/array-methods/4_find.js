@@ -7,18 +7,25 @@
 
 let users = [
   {
+    id: 1,
     name: '123',
     age: 12,
     phone: '+28099448',
   },
   {
+    id: 2,
     name: '123',
     age: 20,
     phone: '+28099854185',
   },
   {
+    id: 3,
     name: '123',
     age: 31,
     phone: '+280996161',
   },
 ];
+
+const res = users.find(user => user.name === '123');
+
+console.log(res);

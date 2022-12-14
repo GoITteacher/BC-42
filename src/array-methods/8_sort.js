@@ -68,7 +68,7 @@ let cars = [
     make: 'Ford',
     model: 'F-150',
     type: 'truck',
-    amount: 11,
+    amount: 6,
     price: 27110,
     onSale: true,
   },
@@ -76,7 +76,7 @@ let cars = [
     make: 'Ford',
     model: 'Fusion',
     type: 'sedan',
-    amount: 13,
+    amount: 6,
     price: 22120,
     onSale: true,
   },
@@ -89,3 +89,24 @@ let cars = [
     onSale: false,
   },
 ];
+
+const str = ['Hello', 'World', 'Roman', 'Vasya'];
+const nums = [11, 1, 10, 14, 20, 2, 22];
+
+const result = cars
+  .filter(car => car.onSale)
+  .sort((a, b) => {
+    if (a.amount !== b.amount) return a.amount - b.amount;
+    return b.price - a.price;
+  })
+  .sort(({ make: make1 }, { make: make2 }) => {
+    return make1.localeCompare(make2);
+  })
+  .map(({ make, price }) => {
+    return {
+      make,
+      price,
+    };
+  });
+
+console.log(result);
