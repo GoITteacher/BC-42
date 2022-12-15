@@ -3,8 +3,9 @@ let elem = {
 };
 
 function func(surname, name) {
+  console.log(surname, name);
   let obj1 = {
-    foo: () => {
+    foo: (x1, x2) => {
       console.log(this);
     },
   };
