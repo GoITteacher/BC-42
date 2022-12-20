@@ -5,6 +5,17 @@ let list = document.querySelector('.usernames');
 Створення
 document.createElement(tagName);
 */
+const items = [];
+
+for (let i = 0; i < 10; i++) {
+  const liItem = document.createElement('li');
+
+  liItem.setAttribute('id', 'myItem');
+  liItem.classList.add('blue');
+  liItem.style.border = '1px solid black';
+
+  items.push(liItem);
+}
 
 /* 
     Додавання
@@ -14,7 +25,11 @@ document.createElement(tagName);
     - element.before(el1, el2, ...) - додає один або декілька елементів перед елементом element.
 */
 
+list.append(...items);
+
 /* 
 Видалення
 elem.remove();
 */
+
+list.remove();

@@ -16,3 +16,6 @@ elem.previousElementSibling - вибере вузол-елемент «злів�
 elem.nextSibling - вибере елемент «праворуч» від elem (його наступного сусіда)
 elem.nextElementSibling - вибере вузол-елемент «праворуч» від elem (його наступного сусіда).
 */
+
+// console.log(list.lastElementChild.previousElementSibling);
+// console.log(list.firstElementChild.nextSibling.nextSibling);
