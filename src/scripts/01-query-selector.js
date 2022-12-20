@@ -20,7 +20,7 @@ console.log(items);
 // const byTag = document.getElementsByTagName('li');
 // console.log(byTag);
 
-// ================
+// ===================================================
 
 // const byId = document.getElementById('findItem');
 // console.log(byId);
