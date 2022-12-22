@@ -43,17 +43,46 @@ const refs = {
   backdropElem: document.querySelector('.js-backdrop'),
 };
 
+function createMarkup(colors) {
+  return colors
+    .map(({ hex, rgb }) => {
+      return `
+      <li class="color-item">
+          <button class="color-body" style="background-color:${hex};"></button>
+          <div class="color-footer">
+              <div>HEX: ${hex}</div>
+              <div>RGB: ${rgb}</div>
+              <div></div>
+          </div>
+      </li>
+    `;
+    })
+    .join('');
+}
+
+refs.btnReloadColor.addEventListener('click', () => {
+  createPaletteItems();
+  refs.itemList.innerHTML = createMarkup(colorPalette);
+});
+
+refs.itemList.addEventListener('click', e => {
+  if (
+    e.target.nodeName === 'BUTTON' &&
+    e.target.classList.contains('color-body')
+  ) {
+    document.body.classList.add('show-modal');
+    refs.modalElement.style.backgroundColor = e.target.style.backgroundColor;
+  }
+});
+
+refs.backdropElem.addEventListener('click', e => {
+  if (e.target === e.currentTarget)
+    document.body.classList.remove('show-modal');
+});
 ////////////////////////////////////////////////////////////////////////////
 
 /* 
 nodeName
-<li class="color-item">
-    <button class="color-body style="background-color:...;"></button>
-    <div class="color-footer">
-        <div>HEX: ....</div>
-        <div>RGB: ....</div>
-        <div></div>
-    </div>
-</li>
+
 
 */

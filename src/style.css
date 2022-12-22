@@ -153,7 +153,7 @@ body.show-modal .backdrop{
     background-color: #5a3688;
 }
 
-.active *{
+.active, .tomato, .blue *{
     color:white;
 }
 
