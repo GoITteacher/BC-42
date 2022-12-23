@@ -8,7 +8,20 @@ img{
     height: 500px;
 }
 
- 
+
+.my-blur{
+   -webkit-filter: blur(10px);
+		filter: blur(10px);
+		transition: filter 400ms, -webkit-filter 400ms;
+}
+
+.my-blur.lazyloaded{
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+}
+
+
+
   .form {
     background-color: #15172b;
     border-radius: 20px;
