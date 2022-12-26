@@ -11,6 +11,10 @@
 
 // =========================================
 
+// Визначити тип функції
+// Якщо функція стрілчата - то то визначити контекст батьківської функції
+// Якщо звичайна то дивимось контекст в момент виклику
+
 // const obj2 = {
 //   name: 'awdawd',
 // };
@@ -18,37 +22,41 @@
 // let obj1 = {
 //   name: 'obj1',
 //   func() {
-//     return () => {
+//     return function () {
 //       console.log(this);
 //     };
 //   },
 // };
-
-// const foo = obj1.func;
-// const newFunc = foo();
-
-// newFunc();
 
 // =========================================
 
-// const obj1 = {
-//   name: 'obj1',
-//   func() {
-//     return () => {
-//       console.log(this); // obj1
-//     };
-//   },
-// };
+// Визначити тип функції
+// Якщо функція стрілчата - то то визначити контекст батьківської функції
+// Якщо звичайна то дивимось контекст в момент виклику
 
-// let obj2 = {
-//   name: 'obj2',
-//   func() {
-//     return () => {
-//       console.log(this);
-//     };
-//   },
-// };
+const obj1 = {
+  name: 'obj1',
+  func() {
+    // obj1
 
-// const newFunc2 = obj1.func().bind(obj2);
-// newFunc2.call(obj2);
+    const fun1 = () => {
+      console.log(this); // obj1
+    };
+
+    return fun1;
+  },
+};
+
+let obj2 = {
+  name: 'obj2',
+  func() {
+    //obj2
+    return function () {
+      console.log(this);
+    };
+  },
+};
+
+const newFunc2 = obj2.func().bind(obj1);
+newFunc2.call(obj2);
 // =========================================

@@ -1,12 +1,13 @@
 let elem = {
-  value: 'Привіт',
+  value: 'Elem',
 };
 
 function func(surname, name) {
+  //elem
   console.log(surname, name);
   let obj1 = {
     foo: (x1, x2) => {
-      console.log(this);
+      console.log(this); // elem
     },
   };
 

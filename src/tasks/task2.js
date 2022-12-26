@@ -13,7 +13,6 @@ let user2 = {
 let newName = user1.setName.bind(user2);
 
 newName('name1');
-
 newName('1231');
 
 console.log(user1);

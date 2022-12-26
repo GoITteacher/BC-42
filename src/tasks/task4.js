@@ -1,16 +1,23 @@
-// function f() {
-//   function foo() {
-//     console.log(this);
-//   }
-//   return foo;
-// }
+function f() {
+  this = obj
+    function foo() {
+      console.log(this);
+    }
+    return foo;
+  const foo = 100;
 
-// const obj = {
-//   name: 'obj',
-// };
-// let obj1 = {
-//   name: 123,
-//   foo1: f.call(obj), // foo1 === foo
-// };
+  return foo;
+}
 
-// obj1.foo1();
+const obj = {
+  name: 'obj',
+};
+
+let obj1 = {
+  name: 123,
+  foo1: f.call(obj), // => 100
+};
+
+obj1.foo1();
+
+// =============
