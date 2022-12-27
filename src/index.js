@@ -1,10 +1,6 @@
-import Player from '@vimeo/player';
+import myData from './scripts/module1.js';
+import * as obj from './scripts/name.js';
+import { sum } from './scripts/name.js';
+import { compareAsc, format } from 'date-fns';
 
-const player = new Player('handstick', {
-  id: 19231868,
-  width: 640,
-});
-
-player.on('play', function () {
-  console.log('played the video!');
-});
+console.log(sum(10, 20));
