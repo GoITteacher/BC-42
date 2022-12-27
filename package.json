@@ -5,7 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "awdawdwad",
-    "push": "git add . && git commit -m 'update' && git push"
+    
+    "pretest":"echo 'pretest'",
+    "test": "echo 'test'",
+    "posttest":"echo 'posttest'",
+
+    "prepush": "git add .",
+    "push": "git commit -m 'update'",
+    "postpush": "git push"
   },
   "repository": {
     "type": "git",
