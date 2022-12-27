@@ -11,31 +11,12 @@ let refs = {
   parent: document.querySelector('.js-parent'),
   child: document.querySelector('.js-child'),
   descendant: document.querySelector('.js-descendant'),
+  inputElem: document.querySelector('.js-input'),
 };
 
-refs.parent.addEventListener('click', e => {
-  e.stopPropagation();
-  console.log('parent');
-});
-
-refs.child.addEventListener('click', e => {
-  e.stopPropagation();
-  console.log('child');
-});
-
-refs.descendant.addEventListener('click', e => {
-  e.stopPropagation();
-  e.stopImmediatePropagation();
-  console.log('descendant1');
-});
-
-refs.descendant.addEventListener('click', e => {
-  e.stopPropagation();
-  e.stopImmediatePropagation();
-  console.log('descendant2');
-});
-
-refs.descendant.addEventListener('click', e => {
-  e.stopPropagation();
-  console.log('descendant3');
+refs.inputElem.addEventListener('input', e => {
+  const inputElem = e.target;
+  console.log(inputElem.value.length);
+  console.log(+inputElem.dataset.length);
+  console.log(inputElem.value.length === +inputElem.dataset.length);
 });
