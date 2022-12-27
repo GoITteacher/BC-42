@@ -5,14 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "awdawdwad",
-    
-    "pretest":"echo 'pretest'",
+    "pretest": "echo 'pretest'",
     "test": "echo 'test'",
-    "posttest":"echo 'posttest'",
-
+    "posttest": "echo 'posttest'",
     "prepush": "git add .",
     "push": "git commit -m 'update'",
-    "postpush": "git push"
+    "postpush": "git push",
+    "gawfhgsefgs": "./node_modules/.bin/babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -28,5 +27,10 @@
     "@vimeo/player": "^2.18.0",
     "lodash": "^4.17.21"
   },
-  "type":"module"
+  "type": "module",
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.7",
+    "@babel/preset-env": "^7.20.2"
+  }
 }
