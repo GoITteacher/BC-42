@@ -51,7 +51,7 @@ img {
   color: #fff;
 }
 
-.alert.is-visible {
+.alert.js-visible {
   transform: translateX(0);
   visibility: visible;
   opacity: 1;

@@ -1,7 +1,5 @@
-import '../css/common.css';
-
 /**
- * - Показываем и скрываем добавляя/удаляя класс is-visible
+ * - Показываем и скрываем добавляя/удаляя класс js-visible
  * - Скрываем через определённое время
  * - Скрываем при клике
  * - Не забываем чистить таймер
@@ -17,3 +15,16 @@ const refs = {
 /*
  * Функции
  */
+
+setTimeout(() => {
+  refs.notification.classList.add('js-visible');
+}, 3000);
+
+timeoutId = setTimeout(() => {
+  refs.notification.classList.remove('js-visible');
+}, 5000);
+
+refs.notification.addEventListener('click', e => {
+  e.target.classList.remove('js-visible');
+  clearTimeout(timeoutId);
+});

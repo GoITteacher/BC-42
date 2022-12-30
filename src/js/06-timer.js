@@ -1,4 +1,5 @@
 import '../css/common.css';
+import { Stopwatch } from './timer';
 
 const refs = {
   startBtn: document.querySelector('button[data-action-start]'),
@@ -6,30 +7,16 @@ const refs = {
   clockface: document.querySelector('.js-clockface'),
 };
 
-class Stopwatch {
-  initTime = 0;
-  isActive = false;
-  intervalId = null;
-  time = 0;
-  onTick;
+const stopwatch = new Stopwatch(onTick);
 
-  constructor() {}
+refs.startBtn.addEventListener('click', () => {
+  stopwatch.start();
+});
 
-  start() {}
+refs.stopBtn.addEventListener('click', () => {
+  stopwatch.stop();
+});
 
-  stop() {}
-
-  getTimeComponents(time) {
-    const hours = this.pad(
-      Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-    );
-    const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-    const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
-
-    return { hours, mins, secs };
-  }
-
-  pad(value) {
-    return String(value).padStart(2, '0');
-  }
+function onTick({ hours, mins, secs }) {
+  refs.clockface.textContent = `${hours}:${mins}:${secs}`;
 }
