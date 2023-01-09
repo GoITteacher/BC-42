@@ -1,36 +1,24 @@
 import '../css/common.css';
 import { refs } from './modules/refs.js';
-import { getQuotes } from './modules/quotesAPI';
-import quotesTemplate from '../templates/quotes-card';
-import heroesTemplate from '../templates/hero-card';
-import { getHero } from './modules/heroesAPI';
+import { getHeroByName, heroMarkup } from './modules/heroes';
+import { getWeather } from './modules/weather';
 
-// =======================================================
-refs.form.addEventListener('submit', onSubmitHandler);
-
-function onSubmitHandler(e) {
+refs.form.addEventListener('submit', e => {
   e.preventDefault();
+  const name = e.target.elements.query.value;
+  const result = getHeroByName(name);
 
-  let dataPromise = getQuotes();
-  dataPromise.then(value => {
-    refs.cardContainer.innerHTML = quotesTemplate(value);
+  result.then(hero => {
+    refs.cardContainer.innerHTML = heroMarkup(hero);
   });
-}
-// =======================================================
+});
 
-refs.form1.addEventListener('submit', onSearchHero);
-
-function onSearchHero(e) {
+refs.form1.addEventListener('submit', e => {
   e.preventDefault();
 
-  const heroName = refs.form1.elements.query.value;
-  getHero(heroName)
-    .then(resolve => resolve.json())
-    .then(hero => {
-      console.log(heroesTemplate(hero));
-      refs.cardContainer1.innerHTML = heroesTemplate(hero);
-    });
-}
+  getWeather(Math.random() * 30, 30, 'uk');
+});
+
 // =======================================================
 // =======================================================
 // =======================================================
