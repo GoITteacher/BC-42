@@ -3,7 +3,6 @@ import { NewsAPI } from './modules/newsApi';
 const refs = {
   formElem: document.querySelector('.js-search-form'),
   listElem: document.querySelector('.js-article-list'),
-  loadMoreBtn: document.querySelector('.js-btn-load'),
 };
 
 const newsApi = new NewsAPI();
@@ -18,23 +17,33 @@ refs.formElem.addEventListener('submit', e => {
   const query = e.target.elements.query.value;
   newsApi.getNews(query).then(data => {
     renderArticles(data.articles);
-    refs.loadMoreBtn.disabled = false;
   });
 
+  document.addEventListener('scroll', onScrollDocument);
   e.target.reset();
 });
 
-refs.loadMoreBtn.addEventListener('click', () => {
+const onScrollDocument = e => {
+  const { clientHeight, scrollHeight, scrollTop } = e.target.documentElement;
+  const currentScrollTop = scrollHeight - scrollTop - clientHeight;
+  if (currentScrollTop < 500 && !isActiveQuery) {
+    isActiveQuery = true;
+    loadNextPage();
+  }
+};
+
+let isActiveQuery = false;
+
+function loadNextPage() {
   newsApi.currentPage += 1;
   newsApi.getNews().then(data => {
     renderArticles(data.articles);
-    refs.loadMoreBtn.disabled = false;
-
+    isActiveQuery = false;
     if (data.page === data.total_pages) {
-      refs.loadMoreBtn.disabled = true;
+      document.removeEventListener('scroll', onScrollDocument);
     }
   });
-});
+}
 
 function renderArticles(articles) {
   const markup = articles
