@@ -15,6 +15,7 @@
 ## Project
 
 - Download [Parcel](https://github.com/goitacademy/parcel-project-template)
+- Розархірувати файли парселю до себе в проєкті
 - У папці partials створити під кожну секцію окремий HTML файл і підключити ці
   файли у головний файл index.hml
   (`<include src="./partials/example.html"></include>`)
