@@ -28,9 +28,3 @@ new Date("2030-03-16 14:25:00");
 new Date("2030-03-16T14:25:00");
 new Date("16 March 2030");
 */
-
-const start = Date.now();
-
-setInterval(() => {
-  console.log(Date.now() - start);
-}, 1000);
