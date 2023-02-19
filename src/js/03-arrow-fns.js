@@ -5,55 +5,44 @@
  * - Аргументы
  */
 
-// const foo = function (x, y) {
-//   console.log(arguments);
-// };
-
-// const foo1 = (x, y) => {
-//   console.log(arguments);
-// };
-
-// foo(10, 20);
-
-// foo1(30, 40);
-
-// ========
-
-// const sum = (x,y) => {
-//     return x + y;
-// }
-// const sum = (x, y) => x + y;
-
-// console.log(sum(40, 50));
-
-// const myFun = ()=>{}
-
-// ========
-
-// ()=>{}
-// (a) => {return a*2}
-// a => {}
-// (a,b,c)=>{}
-
 // =================
-
-function sum(x, y) {
-  console.log(x + y);
-  return x + y;
-}
-
-const min = 10;
-const max = 20;
-
-sum(min, max);
-sum(50, 70);
 
 // =========
 
-function foo(callback1) {}
+// function foo(x1, x2, x3) {
+//   return x1 + x2 + x3;
+// }
+// const foo1 = (x1, x2, x3) => {
+//   x1 = x1 * 10;
+//   x2 = x2 * 10;
+//   x3 = x3 * 10;
+//   const sum = x1 + x2 + x3;
+//   return sum / 3;
+// };
+// const foo2 = (x1, x2) => x1+x2;
 
-const call1 = () => {};
+// const foo1 = () => {};
 
-// foo(call1)
-// foo(()=>{})
-// foo(function(){})
+// const foo2 = x1 => x1 * 10;
+
+// const foo3 = x1 => {
+//   return x1 * 10;
+// };
+
+// const foo4 = (x1, x2, x3) => {};
+
+// const foo5 = ({}) => {};
+
+// (x1, x2) => {};
+
+// function foo() {
+//   console.log(arguments);
+// }
+
+// foo(12, 324, 5623, 56, 34);
+
+// const foo1 = (...arg) => {
+//   console.log(arg);
+// };
+
+// foo1(10, 20, 304, 02);

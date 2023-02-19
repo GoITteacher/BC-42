@@ -7,68 +7,75 @@
  *   или возвращает функцию как результат своей работы называется «функцией высшего порядка»
  */
 
-// function foo(x, x2, callback2) {
-//   if (x > 0) x2();
-//   else callback2();
+// function foo(test) {
+
 // }
 
-// function callback1() {
-//   console.log('Ok');
+// function callback() {
+//   console.log('test');
 // }
 
-// function callback2() {
-//   console.log('error');
-// }
-
-// function x1() {
-//   console.log('x1');
-// }
-
-// foo(-2342, x1, x1);
+// // debugger;
+// foo(callback);
 
 /*
  * функция doMath(a, b, callback)
  */
 
-// function doMath(x, y, callback) {
-//   const result = callback(x, y);
-//   console.log(result);
-// }
+function doMath(a, b, test) {
+  console.log(a, b);
 
-// function sum(s1, s2) {
-//   return s1 + s2;
-// }
+  const result = test(a, b);
+  console.log(result);
+}
 
-// function sub(s1, s2) {
-//   return s1 - s2;
-// }
+function sum(a, b) {
+  return a + b;
+}
 
-// function multiply(s1, s2) {
-//   return s1 * s2;
-// }
-
-// function div(s1, s2) {
-//   return s1 / s2;
-// }
+function subtraction(a, b) {
+  return a - b;
+}
 
 // doMath(10, 20, sum);
+// doMath(10, 20, subtraction);
 
 /*
  * Отложенный вызов: регистрация событий
  */
 
-// const but = document.querySelector('.js-button');
-// but.addEventListener('click', ()=>{});
+const buttonElem = document.querySelector('.js-button');
+buttonElem.addEventListener('click', foo);
 
-// let count = 0;
-// function foo() {
-//   count++;
-//   console.log('Hello', count);
-// }
+function foo() {
+  console.log('click');
+}
 
 /*
  * Отложенный вызов: интервалы
  */
 
-// setTimeout(foo, 10000);
+// setTimeout(foo, 1000); // 1
+// setInterval(foo, 1000); //
+
 // ================================================
+
+function robot(x, call1, call2) {
+  if (x > 10) {
+    return call1(x);
+  } else {
+    return call2(x);
+  }
+}
+
+function test1(x) {
+  return x / 10;
+}
+
+function test2(x) {
+  return x / 2;
+}
+
+debugger;
+const result = robot(15, test1, test2);
+console.log(result);
